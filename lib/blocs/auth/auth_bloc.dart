@@ -22,7 +22,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         final response = await http.post(
           Uri.parse('http://192.168.1.10:8000/login/'),
           body: {
-            'email': event.username,
+            'username': event.username,
             'password': event.password,
           },
         );
