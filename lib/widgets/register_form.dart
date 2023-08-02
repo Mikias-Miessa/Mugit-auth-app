@@ -100,7 +100,7 @@ class _RegisterFormState extends State<RegisterForm> {
                     decoration: InputDecoration(
                       labelText: 'Password',
                     ),
-                    obscureText: true,
+                    obscureText: false,
                   ),
                 ),
               ),
@@ -122,7 +122,7 @@ class _RegisterFormState extends State<RegisterForm> {
                     decoration: InputDecoration(
                       labelText: 'Confirm Password',
                     ),
-                    obscureText: true,
+                    obscureText: false,
                   ),
                 ),
               ),
