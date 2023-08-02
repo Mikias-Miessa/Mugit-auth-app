@@ -3,8 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../blocs/auth/auth_bloc.dart';
 import '../blocs/auth/auth_event.dart';
 import '../blocs/auth/auth_state.dart';
-import 'register_page.dart';
-import 'loding_dialog.dart';
+import '../pages/register_page.dart';
 
 class LoginForm extends StatefulWidget {
   @override

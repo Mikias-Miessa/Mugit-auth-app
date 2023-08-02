@@ -10,7 +10,6 @@ import 'package:mugit/pages/login_page.dart';
 import '../../pages/home_page.dart';
 import 'auth_event.dart';
 import 'auth_state.dart';
-import '../../pages/loding_dialog.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(AuthInitialState());
