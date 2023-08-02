@@ -4,6 +4,7 @@ import '../blocs/auth/auth_bloc.dart';
 import '../blocs/auth/auth_event.dart';
 import '../blocs/auth/auth_state.dart';
 import '../pages/register_page.dart';
+import '../constants/login_form_constants.dart';
 
 class LoginForm extends StatefulWidget {
   @override
@@ -18,24 +19,21 @@ class _LoginFormState extends State<LoginForm> {
   Widget build(BuildContext context) {
     final authBloc = BlocProvider.of<AuthBloc>(context);
 
-    final double buttonWidth = MediaQuery.of(context).size.width * 0.8;
-    final double buttonHeight = MediaQuery.of(context).size.height * 0.06;
-    final double sizedBoxHeight = MediaQuery.of(context).size.height * 0.02;
+    final double buttonWidth =
+        MediaQuery.of(context).size.width * LoginFormConstants.buttonWidth;
+    final double buttonHeight =
+        MediaQuery.of(context).size.height * LoginFormConstants.buttonHeight;
+    final double sizedBoxHeight =
+        MediaQuery.of(context).size.height * LoginFormConstants.sizedBoxHeight;
 
-    final IconData emailIcon = Icons.person_outline_outlined;
-    final IconData passwordIcon = Icons.lock_outline_rounded;
+    final IconData emailIcon = LoginFormConstants.emailIcon;
+    final IconData passwordIcon = LoginFormConstants.passwordIcon;
 
-    final double iconOpacity = 0.4;
-    final double inputFieldOpacity = 0.6;
+    final double iconOpacity = LoginFormConstants.iconOpacity;
+    final double inputFieldOpacity = LoginFormConstants.inputFieldOpacity;
 
-    final TextStyle buttonTextStyle =
-        TextStyle(fontWeight: FontWeight.w800, fontSize: 16);
-
-    final TextStyle linkButtonStyle = TextStyle(
-      fontSize: 16,
-      fontWeight: FontWeight.bold,
-      color: Theme.of(context).primaryColor,
-    );
+    final TextStyle buttonTextStyle = LoginFormConstants.buttonTextStyle;
+    final TextStyle linkButtonStyle = LoginFormConstants.linkButtonStyle;
 
     return Padding(
       padding: const EdgeInsets.all(16.0),
@@ -132,7 +130,6 @@ class _LoginFormState extends State<LoginForm> {
             ),
             child: ElevatedButton(
               onPressed: () {
-                // LoadingDialog.showLoadingDialog(context);
                 authBloc.add(LoginEvent(
                   _usernameController.text,
                   _passwordController.text,

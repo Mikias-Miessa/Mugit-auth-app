@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../blocs/auth/auth_bloc.dart';
-// import '../blocs/auth/auth_event.dart';
-// import '../blocs/auth/auth_state.dart';
-// import 'login_page.dart';
-import 'register_form.dart'; // Import the RegisterForm widget
+
+import '../widgets/register_form.dart';
 
 class RegisterPage extends StatelessWidget {
   static const routeName = '/register';
@@ -44,7 +42,7 @@ class RegisterPage extends StatelessWidget {
                     padding: const EdgeInsets.all(16.0),
                     child: BlocProvider(
                       create: (context) => AuthBloc(),
-                      child: RegisterForm(), // Use the RegisterForm widget here
+                      child: RegisterForm(),
                     ),
                   ),
                 ],

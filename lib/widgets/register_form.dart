@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../blocs/auth/auth_bloc.dart';
 import '../blocs/auth/auth_event.dart';
 import '../blocs/auth/auth_state.dart';
-import 'login_page.dart';
+import '../pages/login_page.dart';
+import '../constants/register_form_constants.dart'; // Import the constants
 
 class RegisterForm extends StatefulWidget {
   @override
@@ -21,24 +22,21 @@ class _RegisterFormState extends State<RegisterForm> {
   Widget build(BuildContext context) {
     final authBloc = BlocProvider.of<AuthBloc>(context);
 
-    final double buttonWidth = MediaQuery.of(context).size.width * 0.8;
-    final double buttonHeight = MediaQuery.of(context).size.height * 0.06;
-    final double sizedBoxHeight = MediaQuery.of(context).size.height * 0.008;
+    final double buttonWidth =
+        MediaQuery.of(context).size.width * RegisterFormConstants.buttonWidth;
+    final double buttonHeight =
+        MediaQuery.of(context).size.height * RegisterFormConstants.buttonHeight;
+    final double sizedBoxHeight = MediaQuery.of(context).size.height *
+        RegisterFormConstants.sizedBoxHeight;
 
-    final IconData emailIcon = Icons.email_outlined;
-    final IconData passwordIcon = Icons.lock_outline_rounded;
+    final IconData emailIcon = RegisterFormConstants.emailIcon;
+    final IconData passwordIcon = RegisterFormConstants.passwordIcon;
 
-    final double iconOpacity = 0.4;
-    final double inputFieldOpacity = 0.6;
+    final double iconOpacity = RegisterFormConstants.iconOpacity;
+    final double inputFieldOpacity = RegisterFormConstants.inputFieldOpacity;
 
-    final TextStyle buttonTextStyle =
-        TextStyle(fontWeight: FontWeight.w800, fontSize: 16);
-
-    final TextStyle linkButtonStyle = TextStyle(
-      fontSize: 16,
-      fontWeight: FontWeight.bold,
-      color: Theme.of(context).primaryColor,
-    );
+    final TextStyle buttonTextStyle = RegisterFormConstants.buttonTextStyle;
+    final TextStyle linkButtonStyle = RegisterFormConstants.linkButtonStyle;
 
     return Padding(
       padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),

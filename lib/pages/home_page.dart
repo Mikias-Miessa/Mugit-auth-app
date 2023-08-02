@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart'; // Import LoginPage to navigate back to login
+import 'login_page.dart';
 
 class HomePage extends StatelessWidget {
   static const routeName = '/home';
